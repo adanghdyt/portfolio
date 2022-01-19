@@ -343,35 +343,42 @@
                     </h5>
                   </div>
                   <div>
-                      <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-                        <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                      <form name="wpu-contact-form">
+                    <form action="" method="post" role="form" class="contactForm">
+                      <div id="sendmessage">Your message has been sent. Thank you!</div>
+                      <div id="errormessage"></div>
+                      <div class="row">
                         <div class="col-md-12 mb-3">
-                          <label for="name" class="form-label">Nama Lengkap</label>
-                          <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+                          <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                          </div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
+                          <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validation"></div>
+                          </div>
                         </div>
                         <div class="col-md-12 mb-3">
-                          <label for="pesan" class="form-label">Pesan</label>
-                          <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                              <div class="validation"></div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
-          
-                        <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                          Loading... 
-                        </button>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <div class="validation"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
                         </div>
                       </div>
                     </form>
                   </div>
                 </div>
-               <div class="col-md-6">
+                <div class="col-md-6">
                   <div class="title-box-2 pt-4 pt-md-0">
                     <h5 class="title-left">
                       Get in Touch
@@ -379,13 +386,15 @@
                   </div>
                   <div class="more-info">
                     <p class="lead">
-                      I'm available for design mechanical, design logo, create aplication by using VBA excel and Web Design in Jabodetabek.
-                      Use the form to inquire about rates and availability, or email me directly.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
+                      expedita aperiam aliquid at.
+                      Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
+                      mollitia inventore?
                     </p>
                     <ul class="list-ico">
-                      <li><span class="ion-ios-location"></span> Tangerang, 15144, Indonesia</li>
-                      <li><span class="ion-ios-telephone"></span> 0857-7522-2621</li>
-                      <li><span class="ion-email"></span> adanghidayat.97@gmail.com</li>
+                      <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
+                      <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
+                      <li><span class="ion-email"></span> contact@example.com</li>
                     </ul>
                   </div>
                   <div class="socials">
@@ -442,7 +451,7 @@
 
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbx0D6-a49BdNcdb4EyTt238Wl-CpZsfSjxzkl6e5zqfzaWDuB5_CF3uP0vgMiziCuRLIA/exec';
-    const form = document.forms['ContactForm'];
+    const form = document.forms['Formulir Contact'];
     const btnKirim = document.querySelector('.btn-kirim');
     const btnLoading = document.querySelector('.btn-loading');
     const myAlert = document.querySelector('.my-alert');
