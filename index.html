@@ -445,5 +445,17 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx0D6-a49BdNcdb4EyTt238Wl-CpZsfSjxzkl6e5zqfzaWDuB5_CF3uP0vgMiziCuRLIA/exec';
+  const form = document.forms['submit-to-google-sheet'];
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
